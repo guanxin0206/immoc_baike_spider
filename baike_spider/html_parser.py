@@ -36,7 +36,10 @@ class HtmlParser(object):
 
         #<div class="lemma-summary" label-module="lemmaSummary">
         summary_node = soup.find('div', class_ = "lemma-summary")
-        res_data['summary'] = summary_node.get_text()
+        if summary_node is not None:
+            res_data['summary'] = summary_node.get_text()
+        else:
+            res_data['summary'] = ""
 
         return res_data
 

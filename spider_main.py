@@ -30,7 +30,9 @@ class SpiderMain(object):
                 break
             except:
                 print "craw failed"
+                #print new_url,html_cont
                 raise
+
 
         self.outputer.output_html()
 
